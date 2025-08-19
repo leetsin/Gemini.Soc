@@ -1,0 +1,3 @@
+# requirements.txt (for Backend API)
+fastapi
+uvicorn[standard]
