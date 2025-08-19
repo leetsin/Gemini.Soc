@@ -20,7 +20,6 @@
     print(f"Finished execution for job {job_id}.")
 
 
-# --- API Endpoints ---
 @app.post("/execute", response_model=JobResponse)
 async def execute_code(request: ExecutionRequest, background_tasks: BackgroundTasks):
     """

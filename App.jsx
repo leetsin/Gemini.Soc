@@ -15,7 +15,7 @@
         if (!res.ok) throw new Error('Failed to fetch job status');
         const data = await res.json();
         
-        if (data.status === 'completed' |
+        if (data.status === 'completed' ||
 
 | data.status === 'failed') {
           setStatus(data.status);
@@ -62,7 +62,7 @@
         <div className="editor-container">
           <h3>Code Editor</h3>
           <CodeEditor code={code} setCode={setCode} />
-          <button onClick={handleSubmit} disabled={status === 'running' |
+          <button onClick={handleSubmit} disabled={status === 'running' ||
 
 | status === 'submitting'}>
             {status === 'running'? 'Executing...' : 'Execute'}
