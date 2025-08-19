@@ -20,6 +20,7 @@
     print(f"Finished execution for job {job_id}.")
 
 
+# --- API Endpoints ---
 @app.post("/execute", response_model=JobResponse)
 async def execute_code(request: ExecutionRequest, background_tasks: BackgroundTasks):
     """
@@ -44,3 +45,10 @@ async def get_job_status(job_id: str):
         raise HTTPException(status_code=404, detail="Job not found")
         
     return JobResult(job_id=job_id, **job)
+
+```
+
+# requirements.txt (for Backend API)
+fastapi
+uvicorn[standard]
+]]>
